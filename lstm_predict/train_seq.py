@@ -9,7 +9,7 @@ from network import SeqNetwork
 #from data_detect import *
 #from data_private import *
 #from data_idcard import *
-from data_sequence_ohlc import get_batch
+from data_process.data_sequence_ohlc import get_batch
 # import tensorflow.contrib.slim as slim
 try:
   import cPickle as pickle
@@ -141,7 +141,7 @@ class TrainSequence:
 if __name__ == "__main__":
     ckp_path = None
     pkt_path = None
-    net = TrainSequence("./training_data.txt")
+    net = TrainSequence("./data_process/training_data.txt")
     #ckp_path = "/disk/work/model/train_sequence/"
     #pkt_path = "/disk/work/model/train_sequence/sequence_iter_51000.pkl"
     net.train(check_point=ckp_path, pkl_path=pkt_path)
